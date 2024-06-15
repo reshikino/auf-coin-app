@@ -8,26 +8,7 @@
   <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 </head>
 <body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-  <div id="ton-connect"></div>
-  <script>
-    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-      manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json',
-      buttonRootId: 'ton-connect'
-    });
-
-    async function connectToWallet() {
-      try {
-        const connectedWallet = await tonConnectUI.connectWallet();
-        console.log("Connected Wallet:", connectedWallet);
-        // Выполнение дополнительных действий после успешного подключения
-      } catch (error) {
-        console.error("Error connecting to wallet:", error);
-      }
-    }
-
-    document.getElementById('ton-connect').addEventListener('click', connectToWallet);
-  </script>
-  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>

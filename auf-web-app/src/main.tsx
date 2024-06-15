@@ -1,12 +1,11 @@
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
-import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import App from './App';
 
-const manifestUrl = 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json';
-
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <TonConnectUIProvider manifestUrl={manifestUrl}>
+ReactDOM.render(
+  <React.StrictMode>
     <App />
-  </TonConnectUIProvider>,
+  </React.StrictMode>,
+  document.getElementById('root')
 );
