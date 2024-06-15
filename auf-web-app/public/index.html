@@ -15,15 +15,6 @@
       manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/auf-web-app/public/tonconnect-manifest.json',
       buttonRootId: 'ton-connect'
     });
-
-    async function connectToWallet() {
-      try {
-        const connectedWallet = await tonConnectUI.connectWallet();
-        console.log(connectedWallet);
-      } catch (error) {
-        console.error("Ошибка подключения к кошельку:", error);
-      }
-    }
   </script>
   <script type="module" src="/src/main.tsx"></script>
 </body>
