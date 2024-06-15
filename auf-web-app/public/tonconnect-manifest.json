@@ -1,1 +1,7 @@
-{"url": "https://auf-web-iwiw1km2k-reshikinos-projects.vercel.app", "name": "AUF Web App", "iconUrl": "https://github.com/reshikino/auf-coin-app/raw/main/auf-web-app/public/auf-coin-logo.png", "termsOfUseUrl": "", "privacyPolicyUrl": ""}
+{
+  "url": "https://auf-web.vercel.app",
+  "name": "AUF Web App",
+  "iconUrl": "https://raw.githubusercontent.com/reshikino/auf-coin-app/main/auf-web-app/public/aufcoin_logo.png",
+  "termsOfUseUrl": "https://yourapp.com/terms",
+  "privacyPolicyUrl": "https://yourapp.com/privacy"
+}
