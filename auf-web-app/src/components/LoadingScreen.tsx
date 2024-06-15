@@ -1,9 +1,10 @@
 import React from 'react';
 
-const LoadingScreen = () => {
+const LoadingScreen: React.FC = () => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <h1>Coming Soon...</h1>
+    <div>
+      <h1>Loading Screen</h1>
+      <p>Coming soon...</p>
     </div>
   );
 };
