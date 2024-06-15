@@ -1,32 +1,21 @@
 import React, { useState } from 'react';
-import { TonConnectButton } from '@tonconnect/ui-react';
-import { LanguageSelection, Terms, LoadingScreen } from './components';
+import WalletConnectPage from './components/WalletConnectPage';
+import LanguageSelectionPage from './components/LanguageSelectionPage';
+import TermsPage from './components/Terms';
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
-  const [isConnected, setIsConnected] = useState(false);
   const [step, setStep] = useState(1);
 
-  const handleNextStep = () => {
-    setStep(step + 1);
-  };
-
-  const handleConnect = () => {
-    setIsConnected(true);
-    setStep(2);
-  };
+  const nextStep = () => setStep(prev => prev + 1);
 
   return (
-    <div className="container">
-      {step === 1 && (
-        <div className="ton-connect-button">
-          <TonConnectButton />
-          <button onClick={handleConnect} className="next-button">Далее</button>
-        </div>
-      )}
-      {step === 2 && <LanguageSelection onNext={handleNextStep} />}
-      {step === 3 && <Terms onNext={handleNextStep} />}
+    <>
+      {step === 1 && <WalletConnectPage onConnect={nextStep} />}
+      {step === 2 && <LanguageSelectionPage onNext={nextStep} />}
+      {step === 3 && <TermsPage onNext={nextStep} />}
       {step === 4 && <LoadingScreen />}
-    </div>
+    </>
   );
 }
 

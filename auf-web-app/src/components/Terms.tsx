@@ -1,17 +1,16 @@
 import React from 'react';
 
-interface Props {
-  onNext: () => void;
-}
-
-const Terms: React.FC<Props> = ({ onNext }) => {
+const TermsPage = ({ onNext }) => {
   return (
-    <div>
-      <h2>Условия использования</h2>
-      <p>Здесь будут условия использования...</p>
-      <button onClick={onNext}>Далее</button>
+    <div style={{ padding: '20px' }}>
+      <h1>Terms and Conditions</h1>
+      <p>
+        {/* Вставьте здесь условия использования */}
+        Эти условия использования описывают ваши права и обязанности при использовании нашего приложения...
+      </p>
+      <button onClick={onNext}>I Accept</button>
     </div>
   );
 };
 
-export default Terms;
+export default TermsPage;
