@@ -1,38 +1,28 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-const languages = ["English", "Russian", "Spanish", "French", "German", "Chinese", "Japanese", "Korean", "Italian", "Portuguese"];
+const LanguageSelection: React.FC = () => {
+  const history = useHistory();
 
-const LanguageSelection = () => {
-  const navigate = useNavigate();
-  const [selectedLanguages, setSelectedLanguages] = React.useState<string[]>([]);
-
-  const handleLanguageChange = (language: string) => {
-    setSelectedLanguages(prev =>
-      prev.includes(language) ? prev.filter(l => l !== language) : [...prev, language]
-    );
-  };
-
-  const handleSubmit = () => {
-    navigate('/terms');
+  const handleNext = () => {
+    history.push('/terms');
   };
 
   return (
     <div>
-      <h1>Select Languages</h1>
-      <div>
-        {languages.map(language => (
-          <label key={language}>
-            <input
-              type="checkbox"
-              value={language}
-              onChange={() => handleLanguageChange(language)}
-            />
-            {language}
-          </label>
-        ))}
-      </div>
-      <button onClick={handleSubmit}>Next</button>
+      <h2>Select App Language</h2>
+      <select>
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        {/* Add other languages */}
+      </select>
+      <h2>Select Languages You Speak</h2>
+      <select multiple>
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        {/* Add other languages */}
+      </select>
+      <button onClick={handleNext}>Next</button>
     </div>
   );
 };

@@ -1,21 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import WalletConnectPage from './components/WalletConnectPage';
 import LanguageSelection from './components/LanguageSelection';
-import Terms from './components/Terms';
+import TermsAndConditions from './components/TermsAndConditions';
 import LoadingScreen from './components/LoadingScreen';
+import TestPage from './components/TestPage';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<WalletConnectPage />} />
-        <Route path="/language" element={<LanguageSelection />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/loading" element={<LoadingScreen />} />
-      </Routes>
-    </Router>
+    <Switch>
+      <Route exact path="/" component={WalletConnectPage} />
+      <Route path="/language" component={LanguageSelection} />
+      <Route path="/terms" component={TermsAndConditions} />
+      <Route path="/loading" component={LoadingScreen} />
+      <Route path="/test" component={TestPage} />
+    </Switch>
   );
-}
+};
 
 export default App;
