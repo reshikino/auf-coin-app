@@ -1,13 +1,12 @@
 {
-    "name": "AUF Web App",
-    "description": "Connect to TON Wallet",
-    "url": "https://auf-web-app.vercel.app/",
-    "icons": [
-      {
-        "src": "https://github.com/reshikino/AUFCOIN/blob/main/AUFCOIN_LOGO.png?raw=true",
-        "sizes": "256x256",
-        "type": "image/png"
-      }
-    ]
-  }
-  
+  "name": "AUF Web App",
+  "description": "Connect to TON Wallet",
+  "url": "https://auf-web-app.vercel.app/",
+  "icons": [
+    {
+      "src": "https://github.com/reshikino/AUFCOIN/blob/main/AUFCOIN_LOGO.png?raw=true",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
