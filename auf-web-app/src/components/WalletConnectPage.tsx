@@ -1,21 +1,23 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const WalletConnectPage = () => {
-  const history = useHistory();
+const WalletConnectPage: React.FC = () => {
+  const navigate = useNavigate();
 
   const handleConnect = async () => {
     try {
-      // Логика подключения кошелька
-      history.push('/language-selection');
+      const connectedWallet = await tonConnectUI.connectWallet();
+      console.log(connectedWallet);
+      navigate('/language-selection');
     } catch (error) {
       console.error('Error connecting to wallet:', error);
     }
   };
 
   return (
-    <div className="wallet-connect-page">
-      <button onClick={handleConnect}>Connect Wallet</button>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div id="ton-connect"></div>
+      <button onClick={handleConnect} style={{ margin: '20px' }}>Connect Wallet</button>
     </div>
   );
 };

@@ -1,18 +1,18 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const TermsPage: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleAccept = () => {
-    history.push('/app');
+    navigate('/loading');
   };
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Условия использования</h1>
-      <p>Примите условия использования, чтобы продолжить.</p>
-      <button onClick={handleAccept}>Принять</button>
+      <h1>Terms and Conditions</h1>
+      <p>Please accept our terms and conditions to proceed.</p>
+      <button onClick={handleAccept}>Accept</button>
     </div>
   );
 };

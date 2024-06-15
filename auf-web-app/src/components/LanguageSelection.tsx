@@ -1,45 +1,44 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+const languages = ['English', 'Russian', 'Spanish', 'French', 'German', 'Chinese', 'Japanese', 'Korean'];
 
 const LanguageSelection: React.FC = () => {
-  const history = useHistory();
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
+  const navigate = useNavigate();
 
-  const handleLanguageChange = (language: string) => {
-    setSelectedLanguages(prev => 
+  const toggleLanguage = (language: string) => {
+    setSelectedLanguages(prev =>
       prev.includes(language) ? prev.filter(l => l !== language) : [...prev, language]
     );
   };
 
-  const handleSubmit = () => {
-    history.push('/terms');
+  const handleNext = () => {
+    navigate('/terms');
   };
-
-  const languages = ['English', 'Russian', 'Spanish', 'French', 'German', 'Chinese', 'Japanese', 'Korean'];
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Выберите язык приложения</h1>
-      <select>
-        <option value="en">English</option>
-        <option value="ru">Russian</option>
-      </select>
-
-      <h2>Какими языками вы владеете?</h2>
-      {languages.map(language => (
-        <div key={language}>
-          <input 
-            type="checkbox" 
-            id={language} 
-            name={language} 
-            value={language} 
-            onChange={() => handleLanguageChange(language)} 
-          />
-          <label htmlFor={language}>{language}</label>
-        </div>
-      ))}
-
-      <button onClick={handleSubmit}>Далее</button>
+      <h1>Select Application Language</h1>
+      <div>
+        <button onClick={() => toggleLanguage('English')}>English</button>
+        <button onClick={() => toggleLanguage('Russian')}>Russian</button>
+      </div>
+      <h2>Select Your Languages</h2>
+      <div>
+        {languages.map(language => (
+          <label key={language}>
+            <input
+              type="checkbox"
+              value={language}
+              onChange={() => toggleLanguage(language)}
+              checked={selectedLanguages.includes(language)}
+            />
+            {language}
+          </label>
+        ))}
+      </div>
+      <button onClick={handleNext}>Next</button>
     </div>
   );
 };
