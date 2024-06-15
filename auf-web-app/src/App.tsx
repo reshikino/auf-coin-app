@@ -6,6 +6,7 @@ import LanguageSelection from './components/LanguageSelection';
 import Terms from './components/Terms';
 import LoadingScreen from './components/LoadingScreen';
 import './App.css';
+import './index.css';
 
 const App: React.FC = () => {
   return (

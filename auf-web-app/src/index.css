@@ -1,8 +1,16 @@
+/* src/index.css */
 body {
-  background-color: #242424;
+  margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 #ton-connect {
-  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
