@@ -6,7 +6,7 @@ const WalletConnectPage: React.FC = () => {
 
   const handleConnect = async () => {
     try {
-      const connectedWallet = await tonConnectUI.connectWallet();
+      const connectedWallet = await (window as any).tonConnectUI.connectWallet();
       console.log(connectedWallet);
       navigate('/language-selection');
     } catch (error) {
