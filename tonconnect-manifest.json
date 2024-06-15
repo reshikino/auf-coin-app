@@ -1,7 +1,7 @@
 {
     "name": "AUF Web App",
     "description": "Connect to TON Wallet",
-    "url": "https://auf-web-i124nez66-reshikinos-projects.vercel.app/",
+    "url": "https://auf-web-app.vercel.app/",
     "icons": [
       {
         "src": "https://github.com/reshikino/AUFCOIN/blob/main/AUFCOIN_LOGO.png?raw=true",

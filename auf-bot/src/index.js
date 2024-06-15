@@ -87,7 +87,7 @@ function sendMenu(chatId) {
         reply_markup: {
             inline_keyboard: [
                 [{ text: texts[lang].joinCommunity, url: 'https://t.me/aufcoincommunity' }],
-                [{ text: texts[lang].launchApp, web_app: { url: 'auf-web-app.vercel.app' } }],
+                [{ text: texts[lang].launchApp, web_app: { url: 'https://auf-web-app.vercel.app/' } }],
                 [{ text: texts[lang].back, callback_data: 'show_start' }]
             ]
         }
