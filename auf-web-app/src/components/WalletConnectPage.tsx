@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useTonWallet, TonConnectButton } from '@tonconnect/ui-react';
 
 const WalletConnectPage: React.FC = () => {
+  const wallet = useTonWallet();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (wallet) {
+      navigate('/language');
+    }
+  }, [wallet, navigate]);
+
   return (
-    <div className="wallet-connect-page">
-      <div id="ton-connect" style={{ textAlign: 'center', marginTop: '20%' }}></div>
+    <div id="root">
+      <TonConnectButton />
     </div>
   );
 };
