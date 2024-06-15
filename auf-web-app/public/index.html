@@ -4,18 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AUF Web App</title>
-  <link rel="stylesheet" href="/src/index.css">
+  <link rel="stylesheet" href="/style.css">
   <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 </head>
 <body>
-  <div id="root"></div>
-  <div id="ton-connect"></div>
-  <script type="module" src="/src/main.tsx"></script>
-  <script>
-    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-      manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/auf-web-app/public/tonconnect-manifest.json',
-      buttonRootId: 'ton-connect'
-    });
-  </script>
+  <div id="root">
+    <div id="ton-connect"></div>
+  </div>
+  <script src="/app.js"></script>
 </body>
 </html>
