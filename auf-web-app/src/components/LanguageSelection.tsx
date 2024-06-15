@@ -29,7 +29,7 @@ const LanguageSelection: React.FC = () => {
         {languages.map(language => (
           <label key={language}>
             <input
-              type="checkbox"
+              type='checkbox'
               value={language}
               onChange={() => toggleLanguage(language)}
               checked={selectedLanguages.includes(language)}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { TonConnectButton } from '@tonconnect/ui-react';
 
 const WalletConnectPage: React.FC = () => {
   const navigate = useNavigate();
@@ -16,8 +17,7 @@ const WalletConnectPage: React.FC = () => {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <div id="ton-connect"></div>
-      <button onClick={handleConnect} style={{ margin: '20px' }}>Connect Wallet</button>
+      <TonConnectButton onClick={handleConnect} style={{ margin: '20px' }}>Connect Wallet</TonConnectButton>
     </div>
   );
 };
