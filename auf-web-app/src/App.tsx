@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
+// src/App.tsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import WalletConnectPage from './components/WalletConnectPage';
-import LanguageSelectionPage from './components/LanguageSelectionPage';
-import TermsPage from './components/Terms';
+import LanguageSelection from './components/LanguageSelection';
+import Terms from './components/Terms';
 import LoadingScreen from './components/LoadingScreen';
+import './App.css';
 
-function App() {
-  const [step, setStep] = useState(1);
-
-  const nextStep = () => setStep(prev => prev + 1);
-
+const App: React.FC = () => {
   return (
-    <>
-      {step === 1 && <WalletConnectPage onConnect={nextStep} />}
-      {step === 2 && <LanguageSelectionPage onNext={nextStep} />}
-      {step === 3 && <TermsPage onNext={nextStep} />}
-      {step === 4 && <LoadingScreen />}
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={WalletConnectPage} />
+        <Route path="/language-selection" component={LanguageSelection} />
+        <Route path="/terms" component={Terms} />
+        <Route path="/loading" component={LoadingScreen} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
