@@ -1,28 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const LanguageSelection: React.FC = () => {
   const history = useHistory();
+  const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
 
-  const handleNext = () => {
+  const handleLanguageChange = (language: string) => {
+    setSelectedLanguages(prev => 
+      prev.includes(language) ? prev.filter(l => l !== language) : [...prev, language]
+    );
+  };
+
+  const handleSubmit = () => {
     history.push('/terms');
   };
 
+  const languages = ['English', 'Russian', 'Spanish', 'French', 'German', 'Chinese', 'Japanese', 'Korean'];
+
   return (
-    <div>
-      <h2>Select App Language</h2>
+    <div style={{ padding: '20px' }}>
+      <h1>Выберите язык приложения</h1>
       <select>
         <option value="en">English</option>
-        <option value="ru">Русский</option>
-        {/* Add other languages */}
+        <option value="ru">Russian</option>
       </select>
-      <h2>Select Languages You Speak</h2>
-      <select multiple>
-        <option value="en">English</option>
-        <option value="ru">Русский</option>
-        {/* Add other languages */}
-      </select>
-      <button onClick={handleNext}>Next</button>
+
+      <h2>Какими языками вы владеете?</h2>
+      {languages.map(language => (
+        <div key={language}>
+          <input 
+            type="checkbox" 
+            id={language} 
+            name={language} 
+            value={language} 
+            onChange={() => handleLanguageChange(language)} 
+          />
+          <label htmlFor={language}>{language}</label>
+        </div>
+      ))}
+
+      <button onClick={handleSubmit}>Далее</button>
     </div>
   );
 };
