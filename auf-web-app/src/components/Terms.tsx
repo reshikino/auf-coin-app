@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Terms: React.FC = () => {
+const Terms = () => {
   const navigate = useNavigate();
 
   const handleAccept = () => {
@@ -9,9 +9,9 @@ const Terms: React.FC = () => {
   };
 
   return (
-    <div className="terms">
-      <h2>Terms of Use</h2>
-      <p>Please accept the terms and conditions to proceed.</p>
+    <div>
+      <h1>Terms and Conditions</h1>
+      <p>Please accept our terms and conditions to proceed.</p>
       <button onClick={handleAccept}>Accept</button>
     </div>
   );

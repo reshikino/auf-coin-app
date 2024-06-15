@@ -1,21 +1,10 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useTonWallet, TonConnectButton } from '@tonconnect/ui-react';
+import React from 'react';
 
-const WalletConnectPage: React.FC = () => {
-  const wallet = useTonWallet();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (wallet) {
-      navigate('/language');
-    }
-  }, [wallet, navigate]);
-
-  useEffect(() => {
+const WalletConnectPage = () => {
+  React.useEffect(() => {
     const tonConnectUI = new (window as any).TON_CONNECT_UI.TonConnectUI({
       manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/auf-web-app/public/tonconnect-manifest.json',
-      buttonRootId: 'ton-connect'
+      buttonRootId: 'ton-connect',
     });
   }, []);
 
