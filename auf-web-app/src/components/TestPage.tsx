@@ -1,1 +1,19 @@
-import React from "react";import { useNavigate } from "react-router-dom";const TestPage: React.FC = () => {const navigate = useNavigate();const goBack = () => {navigate("/");};return (<div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", flexDirection: "column", backgroundColor: "#333", color: "#fff" }}><h1>Test Page</h1><button onClick={goBack} style={{ marginTop: "20px", padding: "10px 20px", backgroundColor: "#555", color: "#fff", border: "none", borderRadius: "5px" }}>Go Back</button></div>);};export default TestPage;
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const TestPage = () => {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate('/');
+  };
+
+  return (
+    <div style={{ padding: '20px', textAlign: 'center' }}>
+      <h1>Test Page</h1>
+      <button onClick={handleBack}>Back</button>
+    </div>
+  );
+};
+
+export default TestPage;

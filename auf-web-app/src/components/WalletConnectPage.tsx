@@ -1,1 +1,27 @@
-import React from "react";import { useNavigate } from "react-router-dom";import { TonConnectButton } from "@tonconnect/ui-react";const WalletConnectPage: React.FC = () => {const navigate = useNavigate();const handleConnect = async () => {try {const connectedWallet = await (window as any).tonConnectUI.connectWallet();console.log(connectedWallet);navigate("/language-selection");} catch (error) {console.error("Error connecting to wallet:", error);}};return (<div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}><TonConnectButton onClick={handleConnect} style={{ margin: "20px" }}>Connect Wallet</TonConnectButton></div>);};export default WalletConnectPage;
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const WalletConnectPage = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const tonConnectUI = new (window as any).TON_CONNECT_UI.TonConnectUI({
+      manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/auf-web-app/public/tonconnect-manifest.json',
+      buttonRootId: 'ton-connect'
+    });
+
+    tonConnectUI.onStatusChange((wallet: any) => {
+      if (wallet) {
+        navigate('/language-selection');
+      }
+    });
+  }, [navigate]);
+
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div id="ton-connect"></div>
+    </div>
+  );
+};
+
+export default WalletConnectPage;
