@@ -1,11 +1,11 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Terms: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleAccept = () => {
-    history.push('/loading');
+    navigate('/loading');
   };
 
   return (

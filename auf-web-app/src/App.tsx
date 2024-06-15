@@ -1,19 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import WalletConnectPage from './components/WalletConnectPage';
-import LanguageSelection from './components/LanguageSelection';
-import Terms from './components/Terms';
-import LoadingScreen from './components/LoadingScreen';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import WalletConnectPage from './components/WalletConnectPage.tsx';
+import LanguageSelection from './components/LanguageSelection.tsx';
+import Terms from './components/Terms.tsx';
+import LoadingScreen from './components/LoadingScreen.tsx';
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={WalletConnectPage} />
-        <Route path="/language" component={LanguageSelection} />
-        <Route path="/terms" component={Terms} />
-        <Route path="/loading" component={LoadingScreen} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<WalletConnectPage />} />
+        <Route path="/language" element={<LanguageSelection />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/loading" element={<LoadingScreen />} />
+      </Routes>
     </Router>
   );
 }

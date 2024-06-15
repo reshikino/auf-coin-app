@@ -1,13 +1,13 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const languages = ['English', 'Русский', 'Español', 'Français', 'Deutsch', '中文', '日本語', '한국어', 'العربية', 'हिन्दी'];
 
 const LanguageSelection: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleNext = () => {
-    history.push('/terms');
+    navigate('/terms');
   };
 
   return (
