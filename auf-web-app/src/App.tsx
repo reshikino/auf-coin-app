@@ -4,7 +4,7 @@ import './App.css';
 
 const App: React.FC = () => {
   return (
-    <TonConnectUIProvider manifestUrl="https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json">
+    <TonConnectUIProvider manifestUrl="https://raw.githubusercontent.com/reshikino/auf-coin-app/main/auf-web-app/public/tonconnect-manifest.json">
       <div className="App">
         <header className="App-header">
           <h1>AUF Web App</h1>
