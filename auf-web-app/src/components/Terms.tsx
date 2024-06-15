@@ -11,7 +11,7 @@ const Terms: React.FC = () => {
   return (
     <div className="terms">
       <h2>Terms of Use</h2>
-      <p>Here are the terms of use...</p>
+      <p>Please accept the terms and conditions to proceed.</p>
       <button onClick={handleAccept}>Accept</button>
     </div>
   );
