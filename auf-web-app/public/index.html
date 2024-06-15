@@ -10,6 +10,15 @@
 </head>
 <body>
   <div id="root"></div>
+  <div id="root"></div>
+  <div id="ton-connect"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <script>
+    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+      manifestUrl: 'https://github.com/reshikino/auf-coin-app/blob/main/tonconnect-manifest.json',
+      buttonRootId: 'ton-connect'
+    });
+  </script>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>

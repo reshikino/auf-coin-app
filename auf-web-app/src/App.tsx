@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>AUF Web App</h1>
-        <TonConnectButton />
+        <div id="ton-connect"></div>
       </header>
     </div>
   );
