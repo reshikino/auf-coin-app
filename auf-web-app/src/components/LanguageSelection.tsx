@@ -1,3 +1,4 @@
+// src/components/LanguageSelection.tsx
 import React from 'react';
 
 const LanguageSelection: React.FC = () => {

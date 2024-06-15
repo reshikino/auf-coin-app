@@ -1,3 +1,4 @@
+// src/components/LoadingScreen.tsx
 import React from 'react';
 
 const LoadingScreen: React.FC = () => {

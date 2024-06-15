@@ -1,3 +1,4 @@
+// src/components/Terms.tsx
 import React from 'react';
 
 const Terms: React.FC = () => {
