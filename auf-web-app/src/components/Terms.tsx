@@ -1,10 +1,18 @@
-// src/components/Terms.tsx
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Terms: React.FC = () => {
+  const history = useHistory();
+
+  const handleAccept = () => {
+    history.push('/loading');
+  };
+
   return (
-    <div>
-      <h1>Terms Page</h1>
+    <div className="terms">
+      <h2>Terms of Use</h2>
+      <p>Here are the terms of use...</p>
+      <button onClick={handleAccept}>Accept</button>
     </div>
   );
 };

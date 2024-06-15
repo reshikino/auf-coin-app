@@ -1,10 +1,31 @@
-// src/components/LanguageSelection.tsx
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
+const languages = ['English', 'Русский', 'Español', 'Français', 'Deutsch', '中文', '日本語', '한국어', 'العربية', 'हिन्दी'];
 
 const LanguageSelection: React.FC = () => {
+  const history = useHistory();
+
+  const handleNext = () => {
+    history.push('/terms');
+  };
+
   return (
-    <div>
-      <h1>Language Selection Page</h1>
+    <div className="language-selection">
+      <h2>Select Application Language</h2>
+      <select>
+        {languages.map((lang, index) => (
+          <option key={index} value={lang}>{lang}</option>
+        ))}
+      </select>
+      <h2>Select Known Languages</h2>
+      {languages.map((lang, index) => (
+        <div key={index}>
+          <input type="checkbox" id={`lang-${index}`} name="known-languages" value={lang} />
+          <label htmlFor={`lang-${index}`}>{lang}</label>
+        </div>
+      ))}
+      <button onClick={handleNext}>Next</button>
     </div>
   );
 };
