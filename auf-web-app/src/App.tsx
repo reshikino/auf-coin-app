@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import WalletConnectPage from './components/WalletConnectPage.tsx';
-import LanguageSelection from './components/LanguageSelection.tsx';
-import Terms from './components/Terms.tsx';
-import LoadingScreen from './components/LoadingScreen.tsx';
+import WalletConnectPage from './components/WalletConnectPage';
+import LanguageSelection from './components/LanguageSelection';
+import Terms from './components/Terms';
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
   return (
