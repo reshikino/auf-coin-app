@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
-import WalletConnectPage from './components/WalletConnectPage';
-import LanguageSelectionPage from './components/LanguageSelectionPage';
-import TermsOfServicePage from './components/TermsOfServicePage';
-import ComingSoonPage from './components/ComingSoonPage';
-import TestPage from './components/TestPage';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import WalletConnectPage from './WalletConnectPage';
+import LanguageSelectionPage from './LanguageSelectionPage';
+import TermsPage from './TermsPage';
+import LoadingPage from './LoadingPage';
+import TestPage from './TestPage';
 
-export default function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={WalletConnectPage} />
-        <Route path="/language-selection" component={LanguageSelectionPage} />
-        <Route path="/terms-of-service" component={TermsOfServicePage} />
-        <Route path="/coming-soon" component={ComingSoonPage} />
-        <Route path="/test-page" component={TestPage} />
-      </Switch>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <Switch>
+      <Route path="/" exact component={WalletConnectPage} />
+      <Route path="/language" component={LanguageSelectionPage} />
+      <Route path="/terms" component={TermsPage} />
+      <Route path="/loading" component={LoadingPage} />
+      <Route path="/test" component={TestPage} />
+    </Switch>
+  </Router>
+);
+
+export default App;

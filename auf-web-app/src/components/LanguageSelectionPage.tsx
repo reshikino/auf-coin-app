@@ -1,27 +1,24 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-const LanguageSelectionPage: React.FC = () => {
+const languages = ['Русский', 'English', 'Español', 'Français', 'Deutsch', '中文', '日本語', '한국어'];
+
+const LanguageSelectionPage = () => {
   const history = useHistory();
-  const languages = ['English', 'Russian', 'Spanish', 'Chinese', 'French', 'German', 'Japanese', 'Korean', 'Portuguese', 'Italian'];
 
   const handleNext = () => {
-    history.push('/terms-of-service');
+    history.push('/terms');
   };
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h1>Select Your Language</h1>
-      <div id="languages">
-        {languages.map(lang => (
-          <label key={lang}>
-            <input type="checkbox" value={lang} />
-            {lang}
-            <br />
-          </label>
-        ))}
-      </div>
-      <button onClick={handleNext}>Next</button>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh' }}>
+      <h1>Выберите язык приложения</h1>
+      {languages.map(lang => (
+        <label key={lang}>
+          <input type="checkbox" value={lang} /> {lang}
+        </label>
+      ))}
+      <button onClick={handleNext}>Далее</button>
     </div>
   );
 };

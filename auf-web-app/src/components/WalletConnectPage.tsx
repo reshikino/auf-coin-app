@@ -1,25 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-const WalletConnectPage: React.FC = () => {
+const WalletConnectPage = () => {
   const history = useHistory();
 
-  useEffect(() => {
-    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-      manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/auf-web-app/public/tonconnect-manifest.json',
-      buttonRootId: 'ton-connect'
-    });
-
-    tonConnectUI.onStatusChange((wallet) => {
-      if (wallet) {
-        history.push('/language-selection');
-      }
-    });
-  }, [history]);
+  const handleConnect = () => {
+    // Подключение кошелька
+    history.push('/language');
+  };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <div id="ton-connect"></div>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <button onClick={handleConnect}>Подключить кошелек</button>
     </div>
   );
 };

@@ -3,10 +3,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // Ensure that assets are correctly resolved
+  base: './',
   build: {
     rollupOptions: {
-      input: './public/index.html' // Adjust this if necessary
+      input: 'public/index.html'
     }
   }
 });
