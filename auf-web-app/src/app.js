@@ -14,33 +14,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showLanguageSelection() {
     const languages = ['English', 'Russian', 'Spanish', 'Chinese', 'French', 'German', 'Japanese', 'Korean', 'Portuguese', 'Italian'];
-    const languageOptions = languages.map(lang => <label><input type="checkbox" value=""></label>).join('<br>');
-    
-    root.innerHTML = 
+    const languageOptions = languages.map(lang => `<label><input type="checkbox" value="${lang}">${lang}</label>`).join('<br>');
+
+    root.innerHTML = `
       <h1>Select Your Language</h1>
       <div id="languages">
-        
+        ${languageOptions}
       </div>
       <button id="nextButton">Next</button>
-    ;
+    `;
 
     document.getElementById('nextButton').addEventListener('click', showTermsOfService);
   }
 
   function showTermsOfService() {
-    root.innerHTML = 
+    root.innerHTML = `
       <h1>Terms of Service</h1>
       <p>Please accept our terms of service to continue.</p>
       <button id="acceptButton">Accept</button>
-    ;
+    `;
 
     document.getElementById('acceptButton').addEventListener('click', showComingSoon);
   }
 
   function showComingSoon() {
-    root.innerHTML = 
+    root.innerHTML = `
       <h1>Coming Soon</h1>
       <p>Our application is coming soon. Stay tuned!</p>
-    ;
+    `;
   }
 });
