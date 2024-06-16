@@ -12,12 +12,15 @@ body {
     height: 100vh;
 }
 
+h1, h2, select, .button, #ton-connect {
+    margin: 10px 0;
+}
+
 .button {
     background-color: #1e88e5;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin-top: 20px;
     cursor: pointer;
     font-size: 16px;
 }
