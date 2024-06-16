@@ -19,4 +19,4 @@ const s=function(){const t=document.createElement("link").relList;if(t&&t.suppor
         `,new TON_CONNECT_UI.TonConnectUI({manifestUrl:"https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json",buttonRootId:"ton-connect"}),document.getElementById("nextButton").addEventListener("click",()=>{o()})},o=()=>{i.innerHTML=`
             <h1>Loading...</h1>
             <p>Coming soon</p>
-        `};(async()=>{try{const e=new TON_CONNECT_UI.TonConnectUI({manifestUrl:"https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json"});await e.restoreConnection(),e.connected?o():t()}catch(e){console.error("Error checking wallet connection:",e),t()}})()});
+        `};(async()=>{try{new TON_CONNECT_UI.TonConnectUI({manifestUrl:"https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json"}).wallet?o():t()}catch(e){console.error("Error checking wallet connection:",e),t()}})()});

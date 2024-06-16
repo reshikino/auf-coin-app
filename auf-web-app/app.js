@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="button" id="nextButton">Next</button>
         `;
 
-        // Инициализация TonConnectUI после добавления элемента в DOM
         const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
             manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json',
             buttonRootId: 'ton-connect'
@@ -42,15 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const checkWalletConnection = async () => {
         try {
-            // Проверка статуса подключения
             const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
                 manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json'
             });
 
-            await tonConnectUI.restoreConnection();
-
-            const connectedWallet = tonConnectUI.connected;
-
+            // Проверка статуса подключения
+            const connectedWallet = tonConnectUI.wallet;
+            
             if (connectedWallet) {
                 renderComingSoonScreen();
             } else {
