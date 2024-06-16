@@ -37,5 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     };
 
-    renderInitialScreen();
+    const checkWalletConnection = async () => {
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json'
+        });
+        
+        const connectedWallet = await tonConnectUI.getWallet();
+        
+        if (connectedWallet) {
+            renderComingSoonScreen();
+        } else {
+            renderInitialScreen();
+        }
+    };
+
+    checkWalletConnection();
 });
