@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: './', // Ensure that assets are correctly resolved
   build: {
     rollupOptions: {
       input: 'public/index.html'
