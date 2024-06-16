@@ -16,7 +16,7 @@ const s=function(){const t=document.createElement("link").relList;if(t&&t.suppor
                 <!-- \u0414\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u0434\u0440\u0443\u0433\u0438\u0435 \u044F\u0437\u044B\u043A\u0438 \u043F\u043E \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E\u0441\u0442\u0438 -->
             </select>
             <button class="button" id="nextButton">Next</button>
-        `,new TON_CONNECT_UI.TonConnectUI({manifestUrl:"https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json",buttonRootId:"ton-connect"}),document.getElementById("nextButton").addEventListener("click",()=>{o()})},o=()=>{i.innerHTML=`
+        `,new TON_CONNECT_UI.TonConnectUI({manifestUrl:"https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json",buttonRootId:"ton-connect"}),document.getElementById("nextButton").addEventListener("click",o)},o=()=>{i.innerHTML=`
             <h1>Loading...</h1>
             <p>Coming soon</p>
         `};(async()=>{try{await new TON_CONNECT_UI.TonConnectUI({manifestUrl:"https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json"}).restoreConnection()?o():t()}catch(e){console.error("Error checking wallet connection:",e),t()}})()});
