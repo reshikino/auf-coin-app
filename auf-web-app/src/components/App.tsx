@@ -1,14 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import WalletConnectPage from './WalletConnectPage';
+import LanguageSelectionPage from './LanguageSelectionPage';
+import TermsPage from './TermsPage';
+import LoadingPage from './LoadingPage';
 
 const App: React.FC = () => {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-      <Link to="/wallet-connect">
-        <button style={{ padding: '10px 20px', fontSize: '16px' }}>Connect Wallet</button>
-      </Link>
-    </div>
-  );
+    const [page, setPage] = useState('wallet');
+
+    const handleNext = () => {
+        if (page === 'wallet') {
+            setPage('language');
+        } else if (page === 'language') {
+            setPage('terms');
+        } else if (page === 'terms') {
+            setPage('loading');
+        }
+    };
+
+    return (
+        <div>
+            {page === 'wallet' && <WalletConnectPage onNext={handleNext} />}
+            {page === 'language' && <LanguageSelectionPage onNext={handleNext} />}
+            {page === 'terms' && <TermsPage onNext={handleNext} />}
+            {page === 'loading' && <LoadingPage />}
+        </div>
+    );
 };
 
 export default App;

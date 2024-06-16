@@ -1,22 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const TermsPage: React.FC = () => {
-  const navigate = useNavigate();
-
-  const handleAccept = () => {
-    navigate('/loading');
-  };
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-      <h2>Terms of Service</h2>
-      <p>Please accept our terms of service to proceed.</p>
-      <button onClick={handleAccept} style={{ padding: '10px 20px', fontSize: '16px', marginTop: '20px' }}>
-        Accept
-      </button>
-    </div>
-  );
+const TermsPage: React.FC<{ onNext: () => void }> = ({ onNext }) => {
+    return (
+        <div>
+            <h2>Terms and Conditions</h2>
+            <p>Please accept the terms and conditions to proceed.</p>
+            <button onClick={onNext}>Accept and Continue</button>
+        </div>
+    );
 };
 
 export default TermsPage;
