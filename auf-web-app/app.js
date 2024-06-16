@@ -1,5 +1,3 @@
-import TonConnect from "@tonconnect/sdk";
-
 document.addEventListener('DOMContentLoaded', () => {
     const app = document.getElementById('app');
 
@@ -7,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         app.innerHTML = `
             <div class="container">
                 <h1>Connect TON Wallet</h1>
-                <button class="button" id="connectWallet">Connect Wallet</button>
+                <div id="ton-connect"></div>
                 <h2>Select Language</h2>
                 <select id="appLanguage">
                     <option value="en">English</option>
@@ -26,22 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        document.getElementById('connectWallet').addEventListener('click', connectWallet);
         document.getElementById('nextButton').addEventListener('click', renderComingSoonScreen);
-    };
-
-    const connectWallet = () => {
-        const tonConnect = new TonConnect({
-            manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json'
-        });
-
-        tonConnect.connectWallet()
-            .then(wallet => {
-                console.log('Connected to wallet', wallet);
-            })
-            .catch(error => {
-                console.error('Failed to connect to wallet', error);
-            });
     };
 
     const renderComingSoonScreen = () => {
