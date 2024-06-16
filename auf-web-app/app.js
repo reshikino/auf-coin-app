@@ -45,10 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json'
             });
 
-            // Попытка восстановления подключения
-            await tonConnectUI.restoreConnection();
-            const connectedWallet = tonConnectUI.wallet;
-            
+            // Проверка статуса подключения
+            const connectedWallet = tonConnectUI.connected;
+
             if (connectedWallet) {
                 renderComingSoonScreen();
             } else {
