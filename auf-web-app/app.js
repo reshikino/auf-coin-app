@@ -22,12 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="button" id="nextButton">Next</button>
         `;
 
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://<YOUR_APP_URL>/tonconnect-manifest.json',
+            buttonRootId: 'ton-connect'
+        });
+
         document.getElementById('nextButton').addEventListener('click', renderComingSoonScreen);
     };
 
     const renderComingSoonScreen = () => {
         app.innerHTML = `
-            <h1>Loading...</h1>
+            <h1>In Developing</h1>
             <p>Coming soon</p>
         `;
     };
