@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
             buttonRootId: 'ton-connect'
         });
 
-        document.getElementById('nextButton').addEventListener('click', renderComingSoonScreen);
+        document.getElementById('nextButton').addEventListener('click', () => {
+            renderComingSoonScreen();
+        });
     };
 
     const renderComingSoonScreen = () => {
