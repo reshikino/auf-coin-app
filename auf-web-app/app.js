@@ -32,21 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const renderComingSoonScreen = () => {
         app.innerHTML = `
-            <h1>In Developing</h1>
+            <h1>Loading...</h1>
             <p>Coming soon</p>
         `;
     };
 
     const checkWalletConnection = async () => {
-        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-            manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json'
-        });
-        
-        const connectedWallet = await tonConnectUI.getWallet();
-        
-        if (connectedWallet) {
-            renderComingSoonScreen();
-        } else {
+        try {
+            const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+                manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json'
+            });
+
+            const connectedWallet = await tonConnectUI.restoreConnection();
+
+            if (connectedWallet) {
+                renderComingSoonScreen();
+            } else {
+                renderInitialScreen();
+            }
+        } catch (error) {
+            console.error('Error checking wallet connection:', error);
             renderInitialScreen();
         }
     };
