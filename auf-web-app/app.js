@@ -22,14 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="button" id="nextButton">Next</button>
         `;
 
-        // Инициализация TON Connect UI
         const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
             manifestUrl: 'https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json',
             buttonRootId: 'ton-connect'
         });
 
-        // Обработчик для кнопки "Next"
-        document.getElementById('nextButton').addEventListener('click', renderComingSoonScreen);
+        document.getElementById('nextButton').addEventListener('click', () => {
+            renderComingSoonScreen();
+        });
     };
 
     const renderComingSoonScreen = () => {
