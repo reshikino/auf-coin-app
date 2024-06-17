@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const renderComingSoonScreen = () => {
         app.innerHTML = `
-            <h1>Loading...</h1>
+            <h1>In Developing</h1>
             <p>Coming soon</p>
         `;
     };

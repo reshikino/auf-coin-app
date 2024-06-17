@@ -17,6 +17,6 @@ const a=function(){const t=document.createElement("link").relList;if(t&&t.suppor
             </select>
             <button class="button" id="nextButton">Next</button>
         `,s(),document.getElementById("nextButton").addEventListener("click",()=>{o()})},o=()=>{i.innerHTML=`
-            <h1>Loading...</h1>
+            <h1>In Developing</h1>
             <p>Coming soon</p>
         `};(async()=>{try{s().wallet?o():t()}catch(e){console.error("Error checking wallet connection:",e),t()}})()});
