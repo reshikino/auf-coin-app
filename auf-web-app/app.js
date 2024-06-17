@@ -1,4 +1,4 @@
-import { tonConnectUI } from './tonconnect.js';
+import { getTonConnectUI } from './tonconnect.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const app = document.getElementById('app');
@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="button" id="nextButton">Next</button>
         `;
 
+        // Инициализация TonConnectUI после добавления элемента в DOM
+        const tonConnectUI = getTonConnectUI();
+
         document.getElementById('nextButton').addEventListener('click', () => {
             renderComingSoonScreen();
         });
@@ -38,7 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const checkWalletConnection = async () => {
         try {
-            // Проверка статуса подключения
+            // Инициализация TonConnectUI для проверки статуса подключения
+            const tonConnectUI = getTonConnectUI();
+
             const connectedWallet = tonConnectUI.wallet;
 
             if (connectedWallet) {
