@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Проверка статуса подключения
             const connectedWallet = tonConnectUI.wallet;
-            
+
             if (connectedWallet) {
                 renderComingSoonScreen();
             } else {
