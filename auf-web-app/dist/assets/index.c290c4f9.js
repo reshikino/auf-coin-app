@@ -1,4 +1,4 @@
-const a=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))r(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const c of n.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&r(c)}).observe(document,{childList:!0,subtree:!0});function o(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerpolicy&&(n.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?n.credentials="include":e.crossorigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function r(e){if(e.ep)return;e.ep=!0;const n=o(e);fetch(e.href,n)}};a();let l;function s(){return l||(l=new TON_CONNECT_UI.TonConnectUI({manifestUrl:"https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json",buttonRootId:"ton-connect"})),l}document.addEventListener("DOMContentLoaded",()=>{const i=document.getElementById("app"),t=()=>{i.innerHTML=`
+const u=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))r(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const c of n.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&r(c)}).observe(document,{childList:!0,subtree:!0});function o(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerpolicy&&(n.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?n.credentials="include":e.crossorigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function r(e){if(e.ep)return;e.ep=!0;const n=o(e);fetch(e.href,n)}};u();let l;function s(){return l||(l=new TON_CONNECT_UI.TonConnectUI({manifestUrl:"https://raw.githubusercontent.com/reshikino/auf-coin-app/main/tonconnect-manifest.json",buttonRootId:"ton-connect"})),l}document.addEventListener("DOMContentLoaded",()=>{const i=document.getElementById("app"),t=()=>{i.innerHTML=`
             <h1>Connect TON Wallet</h1>
             <div id="ton-connect"></div>
             <h2>Select Language</h2>
@@ -17,6 +17,6 @@ const a=function(){const t=document.createElement("link").relList;if(t&&t.suppor
             </select>
             <button class="button" id="nextButton">Next</button>
         `,s(),document.getElementById("nextButton").addEventListener("click",()=>{o()})},o=()=>{i.innerHTML=`
-            <h1>In Developing</h1>
+            <h1>Develop process</h1>
             <p>Coming soon</p>
         `};(async()=>{try{s().wallet?o():t()}catch(e){console.error("Error checking wallet connection:",e),t()}})()});

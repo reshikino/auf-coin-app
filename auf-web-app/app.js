@@ -34,19 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const renderComingSoonScreen = () => {
         app.innerHTML = `
-            <h1>In Developing</h1>
+            <h1>Develop process</h1>
             <p>Coming soon</p>
         `;
     };
 
     const checkWalletConnection = async () => {
         try {
-            // Инициализация TonConnectUI для проверки статуса подключения
             const tonConnectUI = getTonConnectUI();
 
-            const connectedWallet = tonConnectUI.wallet;
-
-            if (connectedWallet) {
+            // Проверка статуса подключения
+            if (tonConnectUI.wallet) {
                 renderComingSoonScreen();
             } else {
                 renderInitialScreen();
